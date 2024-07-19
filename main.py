@@ -33,7 +33,7 @@ async def upload_image(request: Request):
                 "content": [
                     {
                         "type": "text",
-                        "text": "You are a helpful inspector with the task of detecting whether a rooftop has solar panels on top of it or not. You are given a satellite image of a rooftop, and you have to inspect the rooftop for the presence of solar panels."
+                        "text": "You are a helpful inspector with the task of detecting whether a rooftop has solar panels on top of it or not. You are given a satellite image of a rooftop, and you have to inspect the rooftop for the presence of solar panels. Also if the resolution is not clear you need to come to an decision!"
                     },
                     {
                         "type": "image_url",
@@ -44,7 +44,7 @@ async def upload_image(request: Request):
                 ]
             }
         ],
-        "max_tokens": 300
+        "temperature": 0.0
     }
 
     response = requests.post("https://api.openai.com/v1/chat/completions", headers=headers, json=payload)
