@@ -3,6 +3,7 @@ from fastapi.responses import JSONResponse
 import requests
 import os
 from dotenv import load_dotenv
+import json  # Import json to parse the response content
 from openai import OpenAI
 
 load_dotenv()  # Load environment variables from .env file
@@ -11,11 +12,6 @@ app = FastAPI()
 
 api_key = os.getenv("OPENAI_KEY")
 client = OpenAI(api_key=api_key)
-
-
-@app.get("/")
-def read_root():
-    return {"message": "Hello, World!"}
 
 
 @app.post("/endpoint")
@@ -74,4 +70,6 @@ def process_message_content(message_content):
             },
         ],
     )
-    return response.choices[0].message.content
+    # Parse the response content to a dictionary
+    processed_content = json.loads(response.choices[0].message.content)
+    return processed_content
