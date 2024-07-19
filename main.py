@@ -55,7 +55,7 @@ async def upload_image(request: Request):
     message_content = response_json["choices"][0]["message"]["content"]
     result = process_message_content(message_content)
 
-    return JSONResponse(content={"message": message_content})
+    return JSONResponse(content={"result": result})
 
 
 def process_message_content(message_content):
