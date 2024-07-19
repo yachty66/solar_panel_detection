@@ -2,7 +2,7 @@ import requests
 import base64
 
 # Replace with the actual URL of your deployed FastAPI app
-url = "https://stark-forest-83066-3497ed276c90.herokuapp.com/endpoint"
+url = " https://stark-forest-83066-3497ed276c90.herokuapp.com/endpoint"
 
 # Read an image file and encode it in base64
 with open("5.jpeg", "rb") as image_file:
