@@ -5,7 +5,7 @@ import base64
 url = "https://stark-forest-83066-3497ed276c90.herokuapp.com/upload-image/"
 
 # Read an image file and encode it in base64
-with open("1.jpeg", "rb") as image_file:
+with open("5.jpeg", "rb") as image_file:
     encoded_image = base64.b64encode(image_file.read()).decode('utf-8')
 
 # Prepare the payload
